@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #050509;
+    color: white;
+
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+svg {
+    width: 75vw;
+    max-width: 320px;
+}
+
+path {
+    fill: red;
+    fill-opacity:0;
+   
+    stroke: red;
+    stroke-width: 4;
+
+
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+
+    animation:
+    drawHeart 3s linear forwards,
+    fillHeart 1.5s ease 3s forwards;
+}
+
+@keyframes drawHeart {
+    to {
+        stroke-dashoffset: 0
+}
+}
+@keyframes fillHeart{
+    to{
+        fill-opacity: 1;
+    }
+}
+svg {
+    width: 75vw;
+    max-width: 320px;
+
+    animation: heartbeat 1.4s ease-in-out 4.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px red);
+    }
+
+    50% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 18px red);
+    }
+}
